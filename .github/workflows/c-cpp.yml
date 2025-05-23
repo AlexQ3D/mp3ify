@@ -13,7 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name:
+      run: dir
     - name: Make binaries directory
       run: mkdir bin/wavify
     - name: Build Wavify
-      run: g++ src/wavify.cpp -std=c++23 -o bin/wavify/wavify.exe
+      run: g++ ./src/wavify.cpp -std=c++23 -o bin/wavify/wavify.exe
