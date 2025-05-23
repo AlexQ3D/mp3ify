@@ -9,9 +9,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Check Version
-      run: g++ --version
+    - name: Make binaries directory
+      run: mkdir bin/wavify
+    - name: Build Wavify
+      run: g++ src/wavify.cpp -std=c++23 -o bin/wavify/wavify.exe
