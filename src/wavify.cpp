@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 	string ffmpegExe = fs::absolute(appDirectory + "/tools/ffmpeg.exe").string();
 	
 	// Build the command we're gonna send to ffmpeg
-	string cmd = ffmpegExe + " -sample_fmt s16 -r 44100 -y -i \"" + inputFile + "\" -vn \"" + exportDirectory + inputFileName + ".mp3\"";
+	string cmd = ffmpegExe + " -sample_fmt s16 -r 44100 -y -i \"" + inputFile + "\" -vn \"" + exportDirectory + inputFileName + ".wav\"";
 	
 	// Print the command, handy for debugging purposes
 	cout << cmd << "\n";

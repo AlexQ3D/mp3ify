@@ -19,8 +19,9 @@ jobs:
       run: g++ ./src/wavify.cpp -std=c++23 -o bin/wavify/wavify.exe
     - name: Copy ffmpeg to Wavify directory
       run: copy libs/ffmpeg.exe bin/wavify/
-    - name: Archive code coverage results
+    - name: Package binary for upload
       uses: actions/upload-artifact@v4
       with:
           name: wavify-WIN
           path: bin/wavify/
+          
