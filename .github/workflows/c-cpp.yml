@@ -16,7 +16,7 @@ jobs:
     - name: Make binaries directory
       run: mkdir bin/wavify
     - name: Build Wavify
-      run: g++ ./src/wavify.cpp -std=c++23 -o bin/wavify/wavify.exe
+      run: g++ ./src/wavify.cpp -static -std=c++23 -o bin/wavify/wavify.exe
     - name: Copy ffmpeg to Wavify directory
       run: copy libs/ffmpeg.exe bin/wavify/
     - name: Package binary for upload
