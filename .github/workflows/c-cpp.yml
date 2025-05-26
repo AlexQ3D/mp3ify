@@ -14,14 +14,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Make binaries directory
-      run: mkdir bin/wavify
+      run: mkdir bin/converters
     - name: Build Wavify
-      run: g++ ./src/converter.cpp -DWAVIFY -static -std=c++23 -o bin/wavify/wavify.exe
-    - name: Copy ffmpeg to Wavify directory
-      run: copy libs/ffmpeg.exe bin/wavify/
+      run: g++ ./src/converter.cpp -DWAVIFY -static -std=c++23 -o bin/converters/wavify.exe
+    - name: Build mp3ify
+      run: g++ ./src/converter.cpp -DMP3IFY -static -std=c++23 -o bin/converters/mp3ify.exe
+    - name: Copy ffmpeg to Converters directory
+      run: copy libs/ffmpeg.exe bin/converters/
     - name: Package binary for upload
       uses: actions/upload-artifact@v4
       with:
-          name: wavify-WIN
-          path: bin/wavify/
+          name: converters-WIN
+          path: bin/converters/
           
